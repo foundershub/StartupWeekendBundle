@@ -1,0 +1,41 @@
+{
+    "name": "foundershub/foundershub-startupweekend-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 bundle containing the FoundersHub RheinMain StartupWeekend public website.",
+    "keywords": ["symfony2", "bundle"],
+    "homepage": "http://github.com/foundershub/StartupWeekendBundle",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "alamshahi",
+            "homepage": "http://themeforest.net/user/alamshahi",
+            "role": "Theme Developer"
+        },
+        {
+            "name": "Markus Tacker",
+            "email": "m@cto.hiv",
+            "homepage": "https://cto.hiv/",
+            "role": "Developer"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.9",
+        "symfony/framework-bundle": "~2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Foundershub\\StartupWeekendBundle": ""
+        }
+    },
+
+    "target-dir": ""
+}
