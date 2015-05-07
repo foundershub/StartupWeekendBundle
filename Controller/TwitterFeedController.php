@@ -41,11 +41,17 @@ class TwitterFeedController
     private $pageLifetime;
 
     /**
+     * @var string
+     */
+    private $screenName;
+
+    /**
      * @var ClockValue
      */
     private $clock;
 
     /**
+     * @param string     $screen_name
      * @param string     $consumer_key
      * @param string     $consumer_secret
      * @param string     $oauth_access_token
@@ -54,6 +60,7 @@ class TwitterFeedController
      * @param int        $pageLifetime
      */
     public function __construct(
+        $screen_name,
         $consumer_key,
         $consumer_secret,
         $oauth_access_token,
@@ -62,6 +69,7 @@ class TwitterFeedController
         $pageLifetime
     )
     {
+        $this->screenName                = $screen_name;
         $this->consumer_key              = $consumer_key;
         $this->consumer_secret           = $consumer_secret;
         $this->oauth_access_token        = $oauth_access_token;
@@ -82,7 +90,7 @@ class TwitterFeedController
         $auth              = new \TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->oauth_access_token, $this->oauth_access_token_secret);
         $auth->host        = "https://api.twitter.com/1.1/";
         $auth->decode_json = false;
-        $stream            = $auth->get('statuses/user_timeline', ['count' => $request->get('count'), 'exclude_replies' => $request->get('exclude_replies')]);
+        $stream            = $auth->get('statuses/user_timeline', ['count' => $request->get('count'), 'exclude_replies' => $request->get('exclude_replies'), 'screen_name' => $this->screenName]);
 
         if (!$stream) {
             throw new RuntimeException('Failed to fetch Twitter stream.');
