@@ -1,0 +1,12 @@
+startupweekend_index:
+    pattern:  /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'FoundershubStartupWeekendBundle:Page:index.html.twig'
+
+# Twitter stream
+startupweekend_twitter_stream:
+    path: /api/tweets
+    defaults:
+        _controller: foundershub.startupweekend.controller.twitter:twitterAction
+        _format: json

@@ -1,0 +1,10 @@
+services:
+    foundershub.startupweekend.controller.twitter:
+        class: Foundershub\Bundle\StartupWeekendBundle\Controller\TwitterFeedController
+        arguments:
+          - %twitter_consumer_key%
+          - %twitter_consumer_secret%
+          - %twitter_oauth_access_token%
+          - %twitter_oauth_access_token_secret%
+          - @clock
+          - 600

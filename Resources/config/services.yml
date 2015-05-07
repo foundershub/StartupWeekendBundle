@@ -1,0 +1,5 @@
+services:
+    clock:
+        class: Dothiv\ValueObject\ClockValue
+        arguments:
+          - 'now'
