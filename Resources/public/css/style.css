@@ -860,57 +860,6 @@ a.instagram:hover {
 	text-transform: uppercase;
 	width: 170px;
 }
-/* Modal */
-
-.price-table {
-	margin: 0;
-}
-.price-item {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	background: #E7EBED;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	-ms-border-radius: 6px;
-	-o-border-radius: 6px;
-	border-radius: 6px;
-	float: left;
-}
-.price-table .item {
-	margin-bottom: 15px;
-	width: 100%;
-}
-.price-item .price-header {
-	background: none repeat scroll 0 0 #822111;
-	-webkit-border-radius:  6px 6px 0 0;
-	-moz-border-radius: 6px 6px 0 0;
-	-ms-border-radius: 6px 6px 0 0;
-	-o-border-radius: 6px 6px 0 0;
-	border-radius: 6px 6px 0 0;
-	height: 90px;
-	padding: 10px 0;
-}
-.price-item .price-header .title, .price-item .price-header .price {
-	color: #FFFFFF;
-	float: left;
-	font-size: 26px;
-	font-weight: 100;
-	line-height: 40px;
-	text-align: center;
-	text-transform: uppercase;
-	width: 100%;
-}
-.price-item .price-header .price {
-	font-size: 40px;
-	font-weight: 600;
-}
-.price-content {
-	padding: 15px;
-	text-align: center;
-}
-/* About Section */
-
 
 /* Register Section */
 #countdown div {
@@ -1401,25 +1350,6 @@ a.instagram:hover {
 .toggle-item-title.event-title.ui-state-active {
 	background: url(../images/icons/toggle-close.png) scroll no-repeat right 5px transparent;
 	padding: 0 32px 0 0;
-}
-/* Modal */
-.modal {
-	background-color: #fff;
-	-webkit-border-radius: 8px 8px 11px 11px;
-	-moz-border-radius: 8px 8px 11px 11px;
-	-ms-border-radius: 8px 8px 11px 11px;
-	-o-border-radius: 8px 8px 11px 11px;
-	border-radius: 8px 8px 11px 11px;
-}
-.modal-footer {
-	background-color: #efefef;
-	-webkit-border-radius: 0 0 8px 8px;
-	-moz-border-radius: 0 0 8px 8px;
-	-ms-border-radius: 0 0 8px 8px;
-	-o-border-radius: 0 0 8px 8px;
-	border-radius: 0 0 8px 8px;
-	border-top: medium none;
-	box-shadow: none;
 }
 /*  -----------------------------------------------------   /*
 	TIMELINE

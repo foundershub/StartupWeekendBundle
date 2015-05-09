@@ -86,19 +86,6 @@ $(document).ready(function () {
 	$('#intro').parallax("50%", 0.1);
 	$('#venue').parallax("50%", 0.02);
 
-	// Carousel //
-	$(".speakers-carousel").carousel({
-		dispItems: 1,
-		direction: "horizontal",
-		pagination: false,
-		loop: false,
-		autoSlide: false,
-		autoSlideInterval: 5000,
-		delayAutoSlide: 2000,
-		effect: "slide",
-		animSpeed: "slow"
-	});
-
 	// Toggle //
 	$('.toggle-item-title').click(function () {
 		$(this).next().slideToggle();
@@ -108,11 +95,11 @@ $(document).ready(function () {
 
 	// Countdown //
 	$('#countdown').countdown({
-		until: new Date(2014, 10 - 1, 9), // new Date(year, mth - 1, day, hr, min, sec) - date/time to count down to
+		until: new Date(2015, 9 - 1, 27, 18, 0, 0), // new Date(year, mth - 1, day, hr, min, sec) - date/time to count down to
 		// or numeric for seconds offset, or string for unit offset(s):
 		// 'Y' years, 'O' months, 'W' weeks, 'D' days, 'H' hours, 'M' minutes, 'S' seconds
 		// until: '-1m +1d', for demo
-		timezone: -4, // The timezone (hours or minutes from GMT) for the target times, or null for client local
+		timezone: 2, // The timezone (hours or minutes from GMT) for the target times, or null for client local
 		layout: '{d<}<div class="span3"><div class="digit-container">{dn}<span class="label-container">{dl}</span></div></div>{d>}{h<}<div class="span3"><div class="digit-container">{hn}<span class="label-container">{hl}</span></div></div>{h>}{m<}<div class="span3"><div class="digit-container">{mn}<span class="label-container">{ml}</span></div></div>{m>}{s<}<div class="span3"><div class="digit-container">{sn}<span class="label-container">{sl}</span></div></div>{s>}',
 		timeSeparator: '', // Separator for time periods
 		isRTL: false, // True for right-to-left languages, false for left-to-right
@@ -152,38 +139,10 @@ $(document).ready(function () {
 		});
 	}, 12000);
 
-	// Contact Form //
-	$('#contactform').validationEngine();
-
-    // send the form by ajax when sumbitted
-    $('#contactform').submit(function(e){
-        e.preventDefault();
-        var submitUrl = $(this).attr('action');
-        $.ajax({
-            url: submitUrl,
-            type: 'POST',
-            data: $(this).serialize(),
-            dataType: "json",
-            beforeSend: function () {
-                $('#submit').attr('disabled', 'disabled');
-                $('#ErrorMsgs').fadeOut('slow').html('<div class="alert alert-info">Checking...<a href="#" class="close">&times;</a></div>').fadeIn('slow');
-            },
-            success: function(data) {
-                if(data.status === 'success'){
-                    $('#contactform')[0].reset();
-                }
-                $('#ErrorMsgs').html(data.message).fadeIn('slow');
-                $('#submit').removeAttr('disabled');
-            }
-        });
-        return false;
-    });
-
-
 	// Google Map //
 	$('#map_canvas').gmap({
-		'center': new google.maps.LatLng(40.77288, -73.98299), // Change this to your desired latitude and longitude
-		'zoom': 17,
+		'center': new google.maps.LatLng(50.109581, 8.668941), // Change this to your desired latitude and longitude
+		'zoom': 13,
 		'mapTypeControl': false,
 		'navigationControl': false,
 		'streetViewControl': false,
@@ -215,12 +174,12 @@ $(document).ready(function () {
 	$('#map_canvas').gmap().bind('init', function () {
 		$('#map_canvas').gmap('addMarker', {
 			'id': 'marker-1',
-			'position': '40.77288,-73.98299',
+			'position': '50.109581,8.668941',
 			'bounds': false,
 			'icon': image
 		}).click(function () {
 			$('#map_canvas').gmap('openInfoWindow', {
-				'content': '<h4>Eventify</h4><p><strong>Downtown Conference Center</strong><br>Columbus Ave. New York, NY 10019 </p>'
+				'content': '<h4>Deutsche Bahn Silver Tower</h4><p><strong>Jürgen-Ponto-Platz 1</strong><br>60329 Frankfurt am Main, Germany</p>'
 			}, this);
 		});
 	});
