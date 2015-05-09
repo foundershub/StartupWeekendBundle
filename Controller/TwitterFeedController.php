@@ -7,7 +7,7 @@ use Foundershub\Bundle\StartupWeekendBundle\Exception\RuntimeException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-require_once __DIR__ . '/../vendor/abraham/twitteroauth/twitteroauth/twitteroauth.php';
+require_once __DIR__ . '/../../../../../../abraham/twitteroauth/twitteroauth/twitteroauth.php';
 
 /**
  * This controller provides the twitter stream for the social board.
