@@ -252,18 +252,6 @@ filter='cssrewrite,?uglifycss' %}
 <!-- end map -->
 {% include "FoundershubStartupWeekendBundle:partials:index/sponsors.html.twig" %}
 {% include "FoundershubStartupWeekendBundle:partials:index/news.html.twig" %}
-<section id="twitter-feed">
-  <div class="container">
-    <div class="row">
-      <div class="span10 offset1 text-center">
-        <div class="tweet"></div>
-        <a href="https://twitter.com/{{ twitter }}" class="btn btn-follow" rel="me" target="_blank">Follow Us <i class="iconf-twitter"></i></a> </div>
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-</section>
-<!-- end twitter-feed -->
 <section id="contact" class="white">
   <div class="container">
     <div class="row">
@@ -327,6 +315,15 @@ filter='cssrewrite,?uglifycss' %}
   <!-- end container -->
 </section>
 <!-- end newsletter -->
+<section id="twitter-feed">
+    <div class="container">
+        <div class="row">
+            <div class="span10 offset1 text-center">
+                <div class="tweet"></div>
+                <a href="https://twitter.com/{{ twitter }}" class="btn btn-follow" rel="me" target="_blank">Follow Us <i class="iconf-twitter"></i></a> </div>
+        </div>
+    </div>
+</section>
 <footer id="footer">
   <div class="container">
     <div class="row">
