@@ -23,7 +23,8 @@
         "php": ">=5.3.9",
         "symfony/framework-bundle": "~2.3",
         "abraham/twitteroauth": "0.2.0.3",
-        "dothiv/dothiv-valueobject-bundle": "1.x"
+        "dothiv/dothiv-valueobject-bundle": "1.x",
+        "dothiv/dothiv-contentful-bundle": "1.x"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
