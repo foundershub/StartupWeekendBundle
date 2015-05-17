@@ -72,7 +72,7 @@ filter='cssrewrite,?uglifycss' %}
                 {# <li><a href="#schedule">Schedule</a> </li> #}
                 {% if workshops|default([])|length > 0 %}<li><a href="#workshops">Workshops</a> </li>{% endif %}
                 <li><a href="#venue">Venue</a> </li>
-                {% if sponsors|default([])|length > 0 %}<li><a href="#sponsors">Sponsors</a> </li>{% endif %}
+                {% if startupweekend_content('Sponsor')|default([])|length > 0 %}<li><a href="#sponsors">Sponsors</a> </li>{% endif %}
                 {% if news|default([])|length > 0 %}<li><a href="#news">News</a> </li>{% endif %}
                 <li><a href="#contact">Contact</a> </li>
               </ul>

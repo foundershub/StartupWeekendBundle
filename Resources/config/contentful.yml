@@ -1,0 +1,33 @@
+services:
+    startupweekend.contentful.startupweekend_content:
+        class: %dothiv_contentful.content.class%
+        arguments:
+            - @dothiv_contentful.content_repository
+            - @dothiv_contentful.view_builder
+            - %contenful_space_startupweekend%
+
+    startupweekend.contentful.twig.extension:
+        class: %dothiv_contentful.twig.extension.class%
+        arguments:
+         - @startupweekend.contentful.startupweekend_content
+         - "startupweekend_content"
+        tags:
+         - { name: twig.extension }
+
+    startupweekend.contentful.translation.strings_loader:
+        class: %dothiv_contentful.translation.strings_loader.class%
+        arguments:
+         - @startupweekend.contentful.startupweekend_content
+         - 'String'
+         - %dothiv_contentful.default_locale%
+        tags:
+         - { name: translation.loader, alias: contentful_strings_startupweekend }
+
+    startupweekend.contentful.sponsor_logo_listener:
+        class: %dothiv_contentful.view_create.image_listener.class%
+        arguments:
+            - @dothiv_contentful.image_asset_scaler
+            - 'Sponsor'
+            - 'logo'
+        tags:
+            - { name: dothiv_contentful.event_listener, event: dothiv.contentful.view.create, method: onViewCreate }
