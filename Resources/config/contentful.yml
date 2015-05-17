@@ -19,7 +19,7 @@ services:
         arguments:
          - @startupweekend.contentful.startupweekend_content
          - 'String'
-         - %dothiv_contentful.default_locale%
+         - 'en-US'
         tags:
          - { name: translation.loader, alias: contentful_strings_startupweekend }
 
