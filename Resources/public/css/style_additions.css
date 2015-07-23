@@ -1,0 +1,24 @@
+section.x-section {
+    padding: 100px 0 150px;
+    -webkit-box-shadow: 0 5px 0 rgba(30, 38, 44, 0.2) inset;
+    -moz-box-shadow: 0 5px 0 rgba(30, 38, 44, 0.2) inset;
+    box-shadow: 0 5px 0 rgba(30, 38, 44, 0.2) inset;
+}
+
+.top-bar .navbar .nav > li:last-child > a {
+}
+.top-bar .navbar .nav > li > a:hover, .top-bar.alt .navbar .nav > li > a:hover {
+    color: #FFFFFF;
+    /*background: #48A3A;*/
+    background: #E42E17;
+}
+.top-bar .navbar .nav > li > a:focus, .top-bar.alt .navbar .nav > li > a:focus {
+    color: #eee;
+    background: #B51E0A;
+    outline: 0;
+}
+.top-bar .nav .current a, .top-bar.alt .nav .current a {
+    color: #FFFFFF;
+    /*background: #4C5D67;*/
+    background: #E42E17;
+}

@@ -20,6 +20,7 @@
 'bundles/foundershubstartupweekend/css/bootstrap.css'
 'bundles/foundershubstartupweekend/css/bootstrap-responsive.css'
 'bundles/foundershubstartupweekend/css/style.css'
+'bundles/foundershubstartupweekend/css/style_additions.css'
 'bundles/foundershubstartupweekend/css/fonts.css'
 'bundles/foundershubstartupweekend/css/fontello.css'
 'bundles/foundershubstartupweekend/css/jquery.countdown.css'
@@ -68,12 +69,17 @@ filter='cssrewrite,?uglifycss' %}
             <div class="nav-collapse collapse">
               <ul id="mainnav" class="nav">
                 <li> <a href="#about">About</a> </li>
+                <li><a href="#judges">Judges</a></li>
+                <li><a href="#venue">Venue</a> </li>
+                <li><a href="#demo">Demo</a></li>
                 {% if coaches|default([])|length > 0 %}<li> <a href="#speakers">Speakers</a> </li>{% endif %}
                 {# <li><a href="#schedule">Schedule</a> </li> #}
                 {% if workshops|default([])|length > 0 %}<li><a href="#workshops">Workshops</a> </li>{% endif %}
-                <li><a href="#venue">Venue</a> </li>
                 {% if startupweekend_content('Sponsor')|default([])|length > 0 %}<li><a href="#sponsors">Sponsors</a> </li>{% endif %}
                 {% if news|default([])|length > 0 %}<li><a href="#news">News</a> </li>{% endif %}
+
+                <li><a href="#team">Team</a></li>
+                <li><a href="#tickets">Tickets</a></li>
                 <li><a href="#contact">Contact</a> </li>
               </ul>
             </div>
@@ -164,9 +170,16 @@ filter='cssrewrite,?uglifycss' %}
   </div>
   <!-- end container -->
 </section>
+
 {% include "FoundershubStartupWeekendBundle:partials:index/coaches.html.twig" %}
-{# include "FoundershubStartupWeekendBundle:partials:index/schedule.html.twig" #}
+{# {% include "FoundershubStartupWeekendBundle:partials:index/schedule.html.twig" %} #}
 {% include "FoundershubStartupWeekendBundle:partials:index/workshops.html.twig" %}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/tickets.html.twig" %}
+{% include "FoundershubStartupWeekendBundle:partials:index/team.html.twig" %}
+{% include "FoundershubStartupWeekendBundle:partials:index/judges.html.twig" %}
+{% include "FoundershubStartupWeekendBundle:partials:index/demo.html.twig" %}
+
 <section id="venue" class="white">
   <div class="container">
     <div class="row">
@@ -252,6 +265,7 @@ filter='cssrewrite,?uglifycss' %}
 <!-- end map -->
 {% include "FoundershubStartupWeekendBundle:partials:index/sponsors.html.twig" %}
 {% include "FoundershubStartupWeekendBundle:partials:index/news.html.twig" %}
+
 <section id="contact" class="white">
   <div class="container">
     <div class="row">
@@ -259,8 +273,7 @@ filter='cssrewrite,?uglifycss' %}
         <div class="module-header contact-header">
           <h4>Imprint</h4>
         </div>
-      </div>
-      <!-- end span12 -->
+      </div> <!-- end span12 -->
       <div class="span12 hero-unit text-center white">
         <h2>Get in touch</h2>
         <p>We'd love to hear from you!</p>
@@ -284,7 +297,8 @@ filter='cssrewrite,?uglifycss' %}
             Mario Hachemer<br>
             Kruppstraße 105<br>
             60388 Frankfurt am Main<br>
-        Germany</p>
+            Germany
+        </p>
           <p><i class="iconf-mobile"></i> <a href="tel:{{ contact_phone }}">{{ contact_phone }}</a> </p>
           <p><i class="iconf-mail"></i> <a href="mailto:{{ email }}">{{ email }}</a> </p>
       </div>
@@ -294,6 +308,7 @@ filter='cssrewrite,?uglifycss' %}
   <!-- end container -->
 </section>
 <!-- end contact -->
+
 <section id="newsletter">
   <div class="container">
     <div class="row">
