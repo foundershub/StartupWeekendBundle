@@ -1,4 +1,4 @@
-{% for coach in coaches|default([]) %}
+{% for mentor in startupweekend_content('Mentor') %}
     {% if loop.first %}
         <section id="speakers">
         <div class="container">
@@ -29,7 +29,7 @@
             <div class="photo-wrap hover_colour"><img
                         src="{{ asset("bundles/foundershubstartupweekend/images/photos/face01.jpg") }}" alt=" "></div>
             <div class="text-wrap white">
-                <h3>John Doe</h3>
+                <h3>{{ mentor.firstName }}</h3>
                 <h5>Designer at Cottage</h5>
                 <hr class="divider-short center">
                 <p class="description">Proin bibendum ipsum eget nulla molestie, vitae ultricies nulla.</p>

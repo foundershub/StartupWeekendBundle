@@ -146,22 +146,135 @@ $(document).ready(function () {
 		'mapTypeControl': false,
 		'navigationControl': false,
 		'streetViewControl': false,
-		'styles': [{
-			stylers: [{
-				gamma: 0.60
-			}, {
-				hue: "#5DBEB2"
-			}, {
-				invert_lightness: false
-			}, {
-				lightness: 2
-			}, {
-				saturation: -20
-			}, {
-				visibility: "on"
-			}]
-		}]
-	});
+		// 'styles': [{
+		// 	stylers: [{
+		// 		gamma: 0.60
+		// 	}, {
+		// 		hue: "#5DBEB2"
+		// 	}, {
+		// 		invert_lightness: false
+		// 	}, {
+		// 		lightness: 2
+		// 	}, {
+		// 		saturation: -20
+		// 	}, {
+		// 		visibility: "on"
+		// 	}]
+		// }]
+		// style from:
+		// https://snazzymaps.com/style/1861/two-tone-with-labels
+		'styles':
+[
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "saturation": "18"
+            },
+            {
+                "lightness": "-55"
+            },
+            {
+                "visibility": "simplified"
+            },
+            {
+                "color": "#4484a1"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            },
+            {
+                "saturation": "28"
+            },
+            {
+                "lightness": "42"
+            },
+            {
+                "gamma": "2.01"
+            },
+            {
+                "weight": "1"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#aaced9"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+]
+});
 	var image = {
 		url: '/bundles/foundershubstartupweekend/images/marker.png', // Define the map marker file here
 		// This marker is 51 pixels wide by 63 pixels tall.
@@ -183,6 +296,5 @@ $(document).ready(function () {
 			}, this);
 		});
 	});
-
 	// end
 });

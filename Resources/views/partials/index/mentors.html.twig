@@ -1,15 +1,15 @@
-{% if startupweekend_content('Judge')|length > 0 %}
-    <section id="judges">
+{% if startupweekend_content('Mentor')|length > 0 %}
+    <section id="speakers">
         <div class="container">
             <div class="row">
                 <div class="span12">
                     <div class="module-header speakers-header">
-                        <h4>Judges</h4>
+                        <h4>Mentors</h4>
                     </div>
                 </div>
                 
                 <div class="span12 hero-unit text-center white">
-                    <h2>They Won't Let You Get Unnoticed!</h2>
+                    <h2>Learn From These Great Folks</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam error eligendi tempore odit earum.
                     </p>
@@ -22,19 +22,19 @@
                 <div class="span12">
                     <div id="speakerscarousel" class="carouselslider speakers-carousel item-4">
                         <ul>
-                        {% for judge in startupweekend_content('Judge') %}
+                        {% for mentor in startupweekend_content('Mentor') %}
                             <li>
                                 <div class="item">
 
                                     <div class="photo-wrap hover_colour">
-                                        <img src="{{ asset(judge.avatar.file.url) }}" alt=" {{ judge.firstName }}">
+                                        <img src="{{ asset(mentor.avatar.file.url) }}" alt=" {{ mentor.firstName }}">
                                     </div>
 
                                     <div class="text-wrap white">
-                                        <h3>{{ judge.firstName }}</h3>
-                                        <h5>{{ judge.occupation }}</h5>
-                                        {% if judge.company is defined %}
-                                            <h5>{{ judge.company }}</h5>
+                                        <h3>{{ mentor.firstName }}</h3>
+                                        <h5>{{ mentor.occupation }}</h5>
+                                        {% if mentor.company is defined %}
+                                            <h5>{{ mentor.company }}</h5>
                                         {% endif %}
                                         <hr class="divider-short center" />
                                         <p class="description">
@@ -44,25 +44,25 @@
 
                                     <div class="social">
                                         
-                                        {% if judge.urlFacebook is defined %}
+                                        {% if mentor.urlFacebook is defined %}
                                             <a href="#" class="icon-wrap small facebook" title="Facebook">
                                                 <i class="iconf-facebook"></i>
                                             </a>
                                         {% endif %}
 
-                                        {% if judge.urlTwitter is defined %}
+                                        {% if mentor.urlTwitter is defined %}
                                         <a href="#" class="icon-wrap small twitter" title="Twitter">
                                             <i class="iconf-twitter"></i>
                                         </a>
                                         {% endif %}
 
-                                        {% if judge.urlGoogle is defined %}
+                                        {% if mentor.urlGoogle is defined %}
                                         <a href="#" class="icon-wrap small google" title="Google+">
                                             <i class="iconf-gplus"></i>
                                         </a>
                                         {% endif %}
 
-                                        {% if judge.urlLinkedIn is defined %}
+                                        {% if mentor.urlLinkedIn is defined %}
                                         <a href="#" class="icon-wrap small linkedin" title="LinkedIn">
                                             <i class="iconf-linkedin"></i>
                                         </a>

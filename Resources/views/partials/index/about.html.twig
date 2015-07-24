@@ -1,0 +1,42 @@
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="module-header about-header">
+          <h4>About</h4>
+        </div>
+        <!-- end module-header -->
+      </div>
+      <div class="span12 hero-unit text-center">
+        <h1>Launch your startup in 54 hours</h1>
+        <h3>
+          <time datetime="{{ event_start|date('Y-m-d') }}">{{ event_start|date('d') }}</time>
+          -
+          <time datetime="{{ event_end|date('Y-m-d') }}">{{ event_end|date('d') }}</time>
+            {{ event_start|date('M Y') }}, Frankfurt</h3>
+        <h4>{{ description }}</h4>
+      </div>
+      <!-- end hero-unit -->
+      <div class="span12">
+        <div class="divider-space"></div>
+      </div>
+      <div class="span4 text-center">
+        <div class="icon-wrap large color1"><i class="iconf-lightbulb"></i> </div>
+        <h3>Pitch your idea</h3>
+        <p>Pitch your idea in front of an international audience. Make it count because only the 10 best ideas will be executed during the weekend.</p>
+      </div>
+      <div class="span4 text-center">
+        <div class="icon-wrap large color2"><i class="iconf-beaker"></i> </div>
+        <h3>Build your startup</h3>
+        <p>Meet the people that will help you bring your idea to life or join a team that fascinates you and work with them during the whole weekend.</p>
+      </div>
+      <div class="span4 text-center">
+        <div class="icon-wrap large color3"><i class="iconf-star"></i> </div>
+        <h3>Present your product</h3>
+        <p>On Sunday your idea will be judged by a panel of international entrepreneurs and startup experts. The winning teams will receive exciting prices and continued support by the judges!</p>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!--end container-->
+</section>
