@@ -31,3 +31,21 @@ services:
             - 'logo'
         tags:
             - { name: dothiv_contentful.event_listener, event: dothiv.contentful.view.create, method: onViewCreate }
+
+    startupweekend.contentful.judge_avatar_listener:
+        class: %dothiv_contentful.view_create.image_listener.class%
+        arguments:
+            - @dothiv_contentful.image_asset_scaler
+            - 'Judge'
+            - 'avatar'
+        tags:
+            - { name: dothiv_contentful.event_listener, event: dothiv.contentful.view.create, method: onViewCreate }
+
+    startupweekend.contentful.mentor_avatar_listener:
+        class: %dothiv_contentful.view_create.image_listener.class%
+        arguments:
+            - @dothiv_contentful.image_asset_scaler
+            - 'Mentor'
+            - 'avatar'
+        tags:
+            - { name: dothiv_contentful.event_listener, event: dothiv.contentful.view.create, method: onViewCreate }

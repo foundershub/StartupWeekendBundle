@@ -32,6 +32,7 @@ class FoundershubStartupWeekendExtension extends Extension implements PrependExt
 
         $contentfulConfig['thumbnails'] = array(
             array('label' => 'sponsor', 'width' => 200, 'height' => 200, 'exact' => true),
+            array('label' => 'person', 'width' => 200, 'height' => 200, 'exact' => false),
         );
         $container->prependExtensionConfig('dothiv_contentful', $contentfulConfig);
     }
