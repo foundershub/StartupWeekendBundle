@@ -1,5 +1,5 @@
 {% if startupweekend_content('Mentor')|length > 0 %}
-    <section id="speakers">
+    <section id="speakers" class="x-section white-bg">
         <div class="container">
             <div class="row">
                 <div class="span12">
@@ -8,11 +8,9 @@
                     </div>
                 </div>
                 
-                <div class="span12 hero-unit text-center white">
+                <div class="span12 hero-unit text-center">
                     <h2>Learn From These Great Folks</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam error eligendi tempore odit earum.
-                    </p>
+                    {# <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam error eligendi tempore odit earum.</p> #}
                 </div>
 
                 <div class="span12">
@@ -27,19 +25,23 @@
                                 <div class="item">
 
                                     <div class="photo-wrap hover_colour">
-                                        <img src="{{ asset(mentor.avatar.file.url) }}" alt=" {{ mentor.firstName }}">
+                                        <img src="{{ asset(mentor.avatar.file.thumbnails.person) }}" alt=" {{ mentor.firstName }}">
                                     </div>
 
-                                    <div class="text-wrap white">
+                                    <div class="text-wrap">
                                         <h3>{{ mentor.firstName }}</h3>
                                         <h5>{{ mentor.occupation }}</h5>
                                         {% if mentor.company is defined %}
                                             <h5>{{ mentor.company }}</h5>
                                         {% endif %}
                                         <hr class="divider-short center" />
-                                        <p class="description">
-                                            Proin bibendum ipsum eget nulla molestie, vitae ultricies nulla.
-                                        </p>
+                                        {% if mentor.shortBio is defined %}
+                                            <div class="bio-hidden">
+                                                <p class="description">
+                                                    {{ mentor.shortBio }}
+                                                </p>
+                                            </div>
+                                        {% endif %}
                                     </div>
 
                                     <div class="social">

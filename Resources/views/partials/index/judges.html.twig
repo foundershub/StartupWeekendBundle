@@ -1,5 +1,5 @@
 {% if startupweekend_content('Judge')|length > 0 %}
-    <section id="judges">
+    <section id="judges" class="x-section white-bg">
         <div class="container">
             <div class="row">
                 <div class="span12">
@@ -8,11 +8,8 @@
                     </div>
                 </div>
                 
-                <div class="span12 hero-unit text-center white">
-                    <h2>They Won't Let You Get Unnoticed!</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam error eligendi tempore odit earum.
-                    </p>
+                <div class="span12 hero-unit text-center">
+                    <h2>This is the Jury</h2>
                 </div>
 
                 <div class="span12">
@@ -30,15 +27,23 @@
                                         <img src="{{ judge.avatar.file.thumbnails.person }}" alt=" {{ judge.firstName }}">
                                     </div>
 
-                                    <div class="text-wrap white">
+                                    <div class="text-wrap">
                                         <h3>{{ judge.firstName }}</h3>
-                                        <h5>{{ judge.occupation }}</h5>
+                                        
+                                        {% if judge.occupation is defined %}
+                                            <h5>{{ judge.occupation }}</h5>
+                                        {% endif %}
+
                                         {% if judge.company is defined %}
                                             <h5>{{ judge.company }}</h5>
                                         {% endif %}
                                         <hr class="divider-short center" />
                                         <p class="description">
-                                            Proin bibendum ipsum eget nulla molestie, vitae ultricies nulla.
+                                            {% if judge.company is defined %}
+                                                {{ judge.shortBio }}
+                                            {% else %}
+                                                Get to know more about him at the Event.
+                                            {% endif %}
                                         </p>
                                     </div>
 

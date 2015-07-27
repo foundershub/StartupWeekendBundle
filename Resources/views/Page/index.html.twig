@@ -1,6 +1,8 @@
 {% set org = "Founders​Hub" %}
 {% set org_url = "http://www.startupweekendrheinmain.de/" %}
-{% set title = org ~ " Startup Weekend" %}
+{# {% set title = org ~ " Startup Weekend" %} #}
+{% set title = "Startup Weekend" %}
+{% set short_description = "Welcome to FinTechCity!" %}
 {% set description = title ~ " is a 54 hour frenzy of business model creation, coding, designing, and market validation. Come share ideas, form teams, and launch startups." %}
 {% set event_start = '2015-09-25T18:00:00+02:00' %}
 {% set event_end = '2015-09-27T21:00:00+02:00' %}
@@ -70,7 +72,7 @@
                 <li><a href="#about">About</a> </li>
                 <li><a href="#judges">Judges</a></li>
                 <li><a href="#venue">Venue</a> </li>
-                <li><a href="#mentors">Mentors</a></li>
+                <li><a href="#speakers">Mentors</a></li>
                 <li><a href="#demo">Demo</a></li>
                 {% if coaches|default([])|length > 0 %}<li> <a href="#speakers">Speakers</a> </li>{% endif %}
                 {# <li><a href="#schedule">Schedule</a> </li> #}
@@ -100,32 +102,33 @@
 
 {% include "FoundershubStartupWeekendBundle:partials:index/register.html.twig" %}
 
-{# {% include "FoundershubStartupWeekendBundle:partials:index/coaches.html.twig" %} #}
-
-{# {% include "FoundershubStartupWeekendBundle:partials:index/schedule.html.twig" %} #}
-
-{% include "FoundershubStartupWeekendBundle:partials:index/workshops.html.twig" %}
-
-{% include "FoundershubStartupWeekendBundle:partials:index/tickets.html.twig" %}
-
-{% include "FoundershubStartupWeekendBundle:partials:index/team.html.twig" %}
-
 {% include "FoundershubStartupWeekendBundle:partials:index/judges.html.twig" %}
-
-{% include "FoundershubStartupWeekendBundle:partials:index/mentors.html.twig" %}
-
-{% include "FoundershubStartupWeekendBundle:partials:index/demo.html.twig" %}
 
 {% include "FoundershubStartupWeekendBundle:partials:index/venue.html.twig" %}
 
-{% include "FoundershubStartupWeekendBundle:partials:index/map.html.twig" %}
+{# {% include "FoundershubStartupWeekendBundle:partials:index/coaches.html.twig" %} #}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/schedule.html.twig" %}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/workshops.html.twig" %}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/mentors.html.twig" %}
+
+{# {% include "FoundershubStartupWeekendBundle:partials:index/demo.html.twig" %} #}
 
 {% include "FoundershubStartupWeekendBundle:partials:index/sponsors.html.twig" %}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/team.html.twig" %}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/tickets.html.twig" %}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/map.html.twig" %}
+
 {% include "FoundershubStartupWeekendBundle:partials:index/news.html.twig" %}
 
-{% include "FoundershubStartupWeekendBundle:partials:index/contact.html.twig" %}
-
 {% include "FoundershubStartupWeekendBundle:partials:index/newsletter.html.twig" %}
+
+{% include "FoundershubStartupWeekendBundle:partials:index/contact.html.twig" %}
 
 {% include "FoundershubStartupWeekendBundle:partials:index/twitter_feed.html.twig" %}
 

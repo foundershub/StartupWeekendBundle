@@ -1,4 +1,4 @@
-<section id="tickets" class="x-section">
+<section id="tickets" class="x-section white-bg">
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -7,9 +7,17 @@
                 </div>
 
                 <div class="span12 hero-unit text-center">
-                    <h2>Get 'em while they're HOT!</h2>
+                    <h2>Get Your Tickets</h2>
+                    {# <p>lorem ipsum dolor sit amet, consectetur</p> #}
 
-                    <p>lorem ipsum dolor sit amet, consectetur</p>
+                    <div id="tickets-iframe" class="iframe-tickets">
+                        
+                        {% for HTML in startupweekend_content('Eventbrite_Snippet') %}
+                            <div style="margin-top: 20px">
+                                {{ HTML.body|raw }}
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <div class="span12">

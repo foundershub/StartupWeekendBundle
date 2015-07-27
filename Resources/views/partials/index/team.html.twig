@@ -1,22 +1,83 @@
-<section id="team" class="x-section">
-    <div class="container">
-        <div class="row">
-            <div class="span12">
-                <div class="module-header team-header">
-                    <h4>Team</h4>
+{% if startupweekend_content('Team')|length > 0 %}
+    <section id="team" class="x-section white-bg">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="module-header team-header">
+                        <h4>Team</h4>
+                    </div>
                 </div>
-
+                
                 <div class="span12 hero-unit text-center">
-                    <h2>SET THIS JUMBO TITLE</h2>
-
-                    <p>lorem ipsum dolor sit amet, consectetur</p>
+                    <h2>Meet The Team</h2>
+                    {# <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam error eligendi tempore odit earum.</p> #}
                 </div>
 
                 <div class="span12">
                     <div class="divider-space"></div>
                 </div>
 
+                <div class="span12">
+                    <div id="speakerscarousel" class="carouselslider speakers-carousel item-4">
+                        <ul>
+                        {% for member in startupweekend_content('Team') %}
+                            <li>
+                                <div class="item">
+
+                                    <div class="photo-wrap hover_colour">
+                                        <img src="{{ asset(member.avatar.file.thumbnails.person) }}" alt=" {{ member.firstName }}">
+                                    </div>
+
+                                    <div class="text-wrap">
+                                        <h3>{{ member.firstName }}</h3>
+                                        <h5>{{ member.occupation }}</h5>
+                                        {% if member.company is defined %}
+                                            <h5>{{ member.company }}</h5>
+                                        {% endif %}
+                                        <hr class="divider-short center" />
+                                        <p class="description">
+                                            {% if member.shortBio is defined %}
+                                                {{ member.shortBio }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+
+                                    <div class="social">
+                                        
+                                        {% if member.urlFacebook is defined %}
+                                            <a href="#" class="icon-wrap small facebook" title="Facebook">
+                                                <i class="iconf-facebook"></i>
+                                            </a>
+                                        {% endif %}
+
+                                        {% if member.urlTwitter is defined %}
+                                        <a href="#" class="icon-wrap small twitter" title="Twitter">
+                                            <i class="iconf-twitter"></i>
+                                        </a>
+                                        {% endif %}
+
+                                        {% if member.urlGoogle is defined %}
+                                        <a href="#" class="icon-wrap small google" title="Google+">
+                                            <i class="iconf-gplus"></i>
+                                        </a>
+                                        {% endif %}
+
+                                        {% if member.urlLinkedIn is defined %}
+                                        <a href="#" class="icon-wrap small linkedin" title="LinkedIn">
+                                            <i class="iconf-linkedin"></i>
+                                        </a>
+                                        {% endif %}
+
+                                    </div>
+
+                                </div>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
+{% endif %}
