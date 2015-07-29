@@ -37,39 +37,42 @@
                     <!-- end span4 -->
                     <div class="span8">
                         <!-- TIMELINE -->
-                        <section class="timeline toggle-shortcode toggles">
-                            {% for event in startupweekend_content('Events_Day_2') %}
-                                <article class="event">
-                                    <div class="timeline-icon">
-                                        <div class="timeline-icon-container">
-                                            <i class=""></i>
-                                        </div>
-                                    </div>
-                                    <div class="time-box">
-                                        {{ event.time }}
-                                    </div>
-                                    <div class="timeline-content">
-                                        <div class="event-content">
-                                            <div class="toggle-item-title event-title" data-count="1">
-                                                {% if event.title is defined %}
-                                                    <h3>{{ event.title }}</h3>
-                                                {% endif %}
-                                                {# this is a quickfix #}
-                                                {% if event.name is defined %}
-                                                    <h3>{{ event.name }}</h3>
-                                                {% endif %}
+                        <section  id="event-section-1" class="timeline toggle-shortcode toggles">
+                            {% for event in startupweekend_content('Events_Day_1') %}
+                                <div data-time="{{event.time}}" class="events_day_1">
+                                    <article id="day_1_{{ loop.index }}" class="event"  data-day="1">
+                                        <div class="timeline-icon">
+                                            <div class="timeline-icon-container">
+                                                <i class=""></i>
                                             </div>
-                                            <div class="toggle-item-body" style="display: none;">
-                                                <p>
-                                                    {% if event.description is defined %}
-                                                        {{ event.description }}
+                                        </div>
+                                        <div class="time-box">
+                                            {{ event.time }}
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="event-content">
+                                                <div class="toggle-item-title event-title" data-count="1">
+                                                    {% if event.title is defined %}
+                                                        <h3>{{ event.title }}</h3>
                                                     {% endif %}
-                                                </p>
+                                                    {# this is a quickfix #}
+                                                    {% if event.name is defined %}
+                                                        <h3>{{ event.name }}</h3>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="toggle-item-body" style="display: none;">
+                                                    <p>
+                                                        {% if event.description is defined %}
+                                                            {{ event.description }}
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                </div>
                             {% endfor %}
+
                         </section>
                     </div>
                     <!-- end span8 -->
@@ -92,38 +95,40 @@
                     <!-- end span4 -->
                     <div class="span8">
                         <!-- TIMELINE -->
-                        <section class="timeline toggle-shortcode toggles">
+                        <section  id="event-section-2" class="timeline toggle-shortcode toggles">
                             {% for event in startupweekend_content('Events_Day_2') %}
-                                <article class="event">
-                                    <div class="timeline-icon">
-                                        <div class="timeline-icon-container">
-                                            <i class=""></i>
-                                        </div>
-                                    </div>
-                                    <div class="time-box">
-                                        {{ event.time }}
-                                    </div>
-                                    <div class="timeline-content">
-                                        <div class="event-content">
-                                            <div class="toggle-item-title event-title" data-count="1">
-                                                {% if event.title is defined %}
-                                                    <h3>{{ event.title }}</h3>
-                                                {% endif %}
-                                                {# this is a quickfix #}
-                                                {% if event.name is defined %}
-                                                    <h3>{{ event.name }}</h3>
-                                                {% endif %}
+                                <div data-time="{{event.time}}" class="events_day_2">
+                                    <article class="event">
+                                        <div class="timeline-icon">
+                                            <div class="timeline-icon-container">
+                                                <i class=""></i>
                                             </div>
-                                            <div class="toggle-item-body" style="display: none;">
-                                                <p>
-                                                    {% if event.description is defined %}
-                                                        {{ event.description }}
+                                        </div>
+                                        <div class="time-box">
+                                            {{ event.time }}
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="event-content">
+                                                <div class="toggle-item-title event-title" data-count="1">
+                                                    {% if event.title is defined %}
+                                                        <h3>{{ event.title }}</h3>
                                                     {% endif %}
-                                                </p>
+                                                    {# this is a quickfix #}
+                                                    {% if event.name is defined %}
+                                                        <h3>{{ event.name }}</h3>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="toggle-item-body" style="display: none;">
+                                                    <p>
+                                                        {% if event.description is defined %}
+                                                            {{ event.description }}
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                </div>
                             {% endfor %}
                         </section>
 
@@ -143,44 +148,46 @@
                                 <p>Full Schedule</p>
                             </a>
                         </div> #}
-                    
+                        
                     </div>
                     <!-- end span4 -->
                     <div class="span8">
                         <!-- TIMELINE -->
-                        <section class="timeline toggle-shortcode toggles">
+                        <section id="event-section-3" class="timeline toggle-shortcode toggles">
 
                             {% for event in startupweekend_content('Events_Day_3') %}
-                                <article class="event">
-                                    <div class="timeline-icon">
-                                        <div class="timeline-icon-container">
-                                            <i class=""></i>
-                                        </div>
-                                    </div>
-                                    <div class="time-box">
-                                        {{ event.time }}
-                                    </div>
-                                    <div class="timeline-content">
-                                        <div class="event-content">
-                                            <div class="toggle-item-title event-title" data-count="1">
-                                                {% if event.title is defined %}
-                                                    <h3>{{ event.title }}</h3>
-                                                {% endif %}
-                                                {# this is a quickfix #}
-                                                {% if event.name is defined %}
-                                                    <h3>{{ event.name }}</h3>
-                                                {% endif %}
+                                <div data-time="{{event.time}}" class="events_day_3">
+                                    <article class="event">
+                                        <div class="timeline-icon">
+                                            <div class="timeline-icon-container">
+                                                <i class=""></i>
                                             </div>
-                                            <div class="toggle-item-body" style="display: none;">
-                                                <p>
-                                                    {% if event.description is defined %}
-                                                        {{ event.description }}
+                                        </div>
+                                        <div class="time-box">
+                                            {{ event.time }}
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="event-content">
+                                                <div class="toggle-item-title event-title" data-count="1">
+                                                    {% if event.title is defined %}
+                                                        <h3>{{ event.title }}</h3>
                                                     {% endif %}
-                                                </p>
+                                                    {# this is a quickfix #}
+                                                    {% if event.name is defined %}
+                                                        <h3>{{ event.name }}</h3>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="toggle-item-body" style="display: none;">
+                                                    <p>
+                                                        {% if event.description is defined %}
+                                                            {{ event.description }}
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                </div>
                             {% endfor %}
 
                         </section>
