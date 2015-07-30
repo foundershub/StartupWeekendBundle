@@ -132,17 +132,7 @@
 
 {% include "FoundershubStartupWeekendBundle:partials:index/twitter_feed.html.twig" %}
 
-<footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="span12 text-center"> <img src="{{ asset("bundles/foundershubstartupweekend/images/logo-footer.png") }}" alt="{{ title }}">
-        <div class="copyright">© {{ 'now'|date('Y') }} <a href="{{ org_url }}">{{ org }}</a>. All rights reserved.</div>
-      <!-- end span12 -->
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-</footer>
+{% include "FoundershubStartupWeekendBundle:partials:index/footer.html.twig" %}
 <!-- end Document -->
 
 <!-- javascripts -->
