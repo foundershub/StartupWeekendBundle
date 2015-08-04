@@ -7,7 +7,7 @@
                         <h4>Mentors</h4>
                     </div>
                 </div>
-                
+
                 <div class="span12 hero-unit text-center">
                     <h2>Learn From These Great Folks</h2>
                     {# <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam error eligendi tempore odit earum.</p> #}
@@ -45,27 +45,27 @@
                                     </div>
 
                                     <div class="social">
-                                        
+
                                         {% if mentor.urlFacebook is defined %}
-                                            <a href="#" class="icon-wrap small facebook" title="Facebook">
+                                            <a href="{{ mentor.urlFacebook }}" class="icon-wrap small facebook" title="Facebook">
                                                 <i class="iconf-facebook"></i>
                                             </a>
                                         {% endif %}
 
                                         {% if mentor.urlTwitter is defined %}
-                                        <a href="#" class="icon-wrap small twitter" title="Twitter">
+                                        <a href="{{ mentor.urlTwitter }}" class="icon-wrap small twitter" title="Twitter">
                                             <i class="iconf-twitter"></i>
                                         </a>
                                         {% endif %}
 
                                         {% if mentor.urlGoogle is defined %}
-                                        <a href="#" class="icon-wrap small google" title="Google+">
+                                        <a href="{{ mentor.urlGoogle }}" class="icon-wrap small google" title="Google+">
                                             <i class="iconf-gplus"></i>
                                         </a>
                                         {% endif %}
 
                                         {% if mentor.urlLinkedIn is defined %}
-                                        <a href="#" class="icon-wrap small linkedin" title="LinkedIn">
+                                        <a href="{{ mentor.urlLinkedIn }}" class="icon-wrap small linkedin" title="LinkedIn">
                                             <i class="iconf-linkedin"></i>
                                         </a>
                                         {% endif %}

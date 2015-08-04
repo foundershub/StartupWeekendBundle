@@ -7,7 +7,7 @@
                         <h4>Judges</h4>
                     </div>
                 </div>
-                
+
                 <div class="span12 hero-unit text-center">
                     <h2>This is the Jury</h2>
                 </div>
@@ -29,7 +29,7 @@
 
                                     <div class="text-wrap">
                                         <h3>{{ judge.firstName }}</h3>
-                                        
+
                                         {% if judge.occupation is defined %}
                                             <h5>{{ judge.occupation }}</h5>
                                         {% endif %}
@@ -48,27 +48,27 @@
                                     </div>
 
                                     <div class="social">
-                                        
+
                                         {% if judge.urlFacebook is defined %}
-                                            <a href="#" class="icon-wrap small facebook" title="Facebook">
+                                            <a href="{{ judge.urlFacebook }}" class="icon-wrap small facebook" title="Facebook">
                                                 <i class="iconf-facebook"></i>
                                             </a>
                                         {% endif %}
 
                                         {% if judge.urlTwitter is defined %}
-                                        <a href="#" class="icon-wrap small twitter" title="Twitter">
+                                        <a href="{{ judge.urlTwitter }}" class="icon-wrap small twitter" title="Twitter">
                                             <i class="iconf-twitter"></i>
                                         </a>
                                         {% endif %}
 
                                         {% if judge.urlGoogle is defined %}
-                                        <a href="#" class="icon-wrap small google" title="Google+">
+                                        <a href="{{ judge.urlGoogle }}" class="icon-wrap small google" title="Google+">
                                             <i class="iconf-gplus"></i>
                                         </a>
                                         {% endif %}
 
                                         {% if judge.urlLinkedIn is defined %}
-                                        <a href="#" class="icon-wrap small linkedin" title="LinkedIn">
+                                        <a href="{{ judge.urlLinkedIn }}" class="icon-wrap small linkedin" title="LinkedIn">
                                             <i class="iconf-linkedin"></i>
                                         </a>
                                         {% endif %}

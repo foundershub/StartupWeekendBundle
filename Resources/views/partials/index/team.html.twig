@@ -7,7 +7,7 @@
                         <h4>Team</h4>
                     </div>
                 </div>
-                
+
                 <div class="span12 hero-unit text-center">
                     <h2>Meet The Team</h2>
                     {# <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam error eligendi tempore odit earum.</p> #}
@@ -43,27 +43,27 @@
                                     </div>
 
                                     <div class="social">
-                                        
+
                                         {% if member.urlFacebook is defined %}
-                                            <a href="#" class="icon-wrap small facebook" title="Facebook">
+                                            <a href="{{ member.urlFacebook }}" class="icon-wrap small facebook" title="Facebook">
                                                 <i class="iconf-facebook"></i>
                                             </a>
                                         {% endif %}
 
                                         {% if member.urlTwitter is defined %}
-                                        <a href="#" class="icon-wrap small twitter" title="Twitter">
+                                        <a href="{{ member.urlTwitter }}" class="icon-wrap small twitter" title="Twitter">
                                             <i class="iconf-twitter"></i>
                                         </a>
                                         {% endif %}
 
                                         {% if member.urlGoogle is defined %}
-                                        <a href="#" class="icon-wrap small google" title="Google+">
+                                        <a href="{{ member.urlGoogle }}" class="icon-wrap small google" title="Google+">
                                             <i class="iconf-gplus"></i>
                                         </a>
                                         {% endif %}
 
                                         {% if member.urlLinkedIn is defined %}
-                                        <a href="#" class="icon-wrap small linkedin" title="LinkedIn">
+                                        <a href="{{ member.urlLinkedIn }}" class="icon-wrap small linkedin" title="LinkedIn">
                                             <i class="iconf-linkedin"></i>
                                         </a>
                                         {% endif %}
