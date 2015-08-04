@@ -346,15 +346,11 @@ $(document).ready(function () {
         array_events.sort(compare);
 
         $('.' + event_list).each(function(key, value) {
-            console.log(array_events[key].dataset.time);
-
-            console.log(array_events[key]);
-
             $('#' + event_section_id).append(array_events[key]);
         });
     }
 
-    sortArrayByDate('events_day_1', 'event-section-1'); 
-    sortArrayByDate('events_day_2', 'event-section-2'); 
-    sortArrayByDate('events_day_3', 'event-section-3'); 
+    sortArrayByDate('events_day_1', 'event-section-1');
+    sortArrayByDate('events_day_2', 'event-section-2');
+    sortArrayByDate('events_day_3', 'event-section-3');
 });
