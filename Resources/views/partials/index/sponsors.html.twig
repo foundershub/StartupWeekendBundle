@@ -1,5 +1,6 @@
-{% for sponsor in startupweekend_content('Sponsor') %}
-{% if loop.first %}
+{% import _self as macros %}
+
+{% if startupweekend_content('Sponsor')|length > 0 %}
 <section id="sponsors" class="x-section white-bg">
     <div class="container">
         <div class="row">
@@ -11,15 +12,50 @@
             <div class="span12 hero-unit text-center">
                 <h2>{{ title }} is proudly supported by these awesome sponsors</h2>
             </div>
+        </div>
 {% endif %}
-            <div class="span3 text-center">
-                <a href="{{ sponsor.link }}" rel="friend met">
-                    <img src="{{ sponsor.logo.file.thumbnails.sponsor }}" alt="{{ sponsor.name }}" class="sponsor-logo">
-                </a>
+
+{% set partner = [] %}
+{% set platinum = [] %}
+{% set gold = [] %}
+{% set silver = [] %}
+{% for sponsor in startupweekend_content('Sponsor') %}
+    {% if sponsor.type == "partner" %}{% set partner = partner|merge([sponsor]) %}{% endif %}
+    {% if sponsor.type == "platinum" %}{% set platinum = platinum|merge([sponsor]) %}{% endif %}
+    {% if sponsor.type == "gold" %}{% set gold = gold|merge([sponsor]) %}{% endif %}
+    {% if sponsor.type == "silver" %}{% set silver = silver|merge([sponsor]) %}{% endif %}
+{% endfor %}
+
+{% macro sponsorlist(sponsors, class) %}
+{% for sponsor in sponsors %}
+{% if loop.first %}
+        <div class="row">
+            <div class="span12">
+                <div class="module-header sponsors-header">
+                    <h5>{{ class }} Sponsors</h5>
+                </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="span12 text-center">
+{% endif %}
+                <a href="{{ sponsor.link }}" rel="friend met">
+                    <img src="{{ sponsor.logo.file.thumbnails.sponsor }}" alt="{{ sponsor.name }}"
+                         class="spnsr-logo spnsr-logo-{{ class|lower }}">
+                </a>
 {% if loop.last %}
         </div>
     </div>
-</section>
 {% endif %}
 {% endfor %}
+{% endmacro %}
+
+{{ macros.sponsorlist(partner, 'Partner') }}
+{{ macros.sponsorlist(platinum, 'Platinum') }}
+{{ macros.sponsorlist(gold, 'Gold') }}
+{{ macros.sponsorlist(silver, 'Silver') }}
+
+{% if startupweekend_content('Sponsor')|length > 0 %}
+    </div>
+</section>
+{% endif %}
