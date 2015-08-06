@@ -19,11 +19,13 @@
 {% set platinum = [] %}
 {% set gold = [] %}
 {% set silver = [] %}
+{% set media = [] %}
 {% for sponsor in startupweekend_content('Sponsor') %}
     {% if sponsor.type == "partner" %}{% set partner = partner|merge([sponsor]) %}{% endif %}
     {% if sponsor.type == "platinum" %}{% set platinum = platinum|merge([sponsor]) %}{% endif %}
     {% if sponsor.type == "gold" %}{% set gold = gold|merge([sponsor]) %}{% endif %}
     {% if sponsor.type == "silver" %}{% set silver = silver|merge([sponsor]) %}{% endif %}
+    {% if sponsor.type == "media" %}{% set media = media|merge([sponsor]) %}{% endif %}
 {% endfor %}
 
 {% macro sponsorlist(sponsors, class) %}
@@ -54,6 +56,7 @@
 {{ macros.sponsorlist(platinum, 'Platinum') }}
 {{ macros.sponsorlist(gold, 'Gold') }}
 {{ macros.sponsorlist(silver, 'Silver') }}
+{{ macros.sponsorlist(media, 'Media') }}
 
 {% if startupweekend_content('Sponsor')|length > 0 %}
     </div>
