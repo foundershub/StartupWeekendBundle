@@ -470,7 +470,7 @@ nav select {
     margin: 0 auto;
     padding: 0;
 }
-#about, #register, #speakers, #judges, #schedule, #workshops, #venue, #sponsors, #news, #twitter-feed, #contact, #newsletter {
+#about, #register, #speakers, #judges, #schedule, #workshops, #venue, #sponsors, #news, #newsitem, #twitter-feed, #contact, #newsletter {
     padding: 100px 0 150px;
     -webkit-box-shadow: 0 5px 0 rgba(30, 38, 44, 0.2) inset;
     -moz-box-shadow: 0 5px 0 rgba(30, 38, 44, 0.2) inset;
@@ -516,6 +516,9 @@ nav select {
 }
 #news {
     background: #EF7247;
+}
+#newsitem {
+    background: #ffffff;
 }
 #twitter-feed {
     padding: 60px 0;

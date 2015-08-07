@@ -1,0 +1,35 @@
+{% extends "FoundershubStartupWeekendBundle:Page:base.html.twig" %}
+{% block content %}
+    {% include "FoundershubStartupWeekendBundle:partials:index/intro.html.twig" %}
+    {% for post in startupweekend_content('Blog Post') %}
+    {% if post.slug == app.request.attributes.get('slug') %}
+        {% set pubDate = post.cfMeta.updatedAt %}
+        {% set permalink = url('startupweekend_blogpost', {'slug': post.slug}) %}
+        <section id="newsitem">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="module-header news-header">
+                            <h4>{{ post.title }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset2 span8">
+                            <div class="news-date"><span class="month">{{ pubDate|date('M') }}</span> <span
+                                        class="day">{{ pubDate|date('d') }}</span></div>
+                            <div class="share-widget">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ permalink|url_encode }}"><i class="iconf-facebook"></i></a>
+                                <a href="https://twitter.com/home?status={{ post.title|url_encode }}:%20{{ permalink|url_encode }}%20%23swrm15"><i class="iconf-twitter"></i></a>
+                            </div>
+                            <br class="clearfix">
+                        {% if post.introduction is defined %}{{ post.introduction|markdown }}{% endif %}
+                        {{ post.text|markdown }}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% endfor %}
+
+{% endblock %}

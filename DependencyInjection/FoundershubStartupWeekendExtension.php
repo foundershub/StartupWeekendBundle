@@ -19,6 +19,7 @@ class FoundershubStartupWeekendExtension extends Extension implements PrependExt
         $loader->load('services.yml');
         $loader->load('controllers.yml');
         $loader->load('contentful.yml');
+        $loader->load('twig.yml');
     }
 
     /**

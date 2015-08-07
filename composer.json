@@ -24,7 +24,8 @@
         "symfony/framework-bundle": "~2.3",
         "abraham/twitteroauth": "0.2.0.3",
         "dothiv/dothiv-valueobject-bundle": "1.x",
-        "dothiv/dothiv-contentful-bundle": "dev-master"
+        "dothiv/dothiv-contentful-bundle": "dev-master",
+        "twig/extensions": "1.0.*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

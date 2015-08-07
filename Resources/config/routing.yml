@@ -4,6 +4,12 @@ startupweekend_index:
         _controller: FrameworkBundle:Template:template
         template:    'FoundershubStartupWeekendBundle:Page:index.html.twig'
 
+startupweekend_blogpost:
+    pattern:  /blog/{slug}
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'FoundershubStartupWeekendBundle:Page:blog.html.twig'
+
 # Twitter stream
 startupweekend_twitter_stream:
     path: /api/tweets

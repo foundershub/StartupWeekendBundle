@@ -1,0 +1,8 @@
+parameters:
+    foundershub.startupweekend.twig.extension.multisort.class: Foundershub\Bundle\StartupWeekendBundle\Twig\Extension\ArrayMultisortTwigExtension
+
+services:
+    foundershub.startupweekend.twig.extension.multisort:
+        class: %foundershub.startupweekend.twig.extension.multisort.class%
+        tags:
+         - { name: twig.extension }
