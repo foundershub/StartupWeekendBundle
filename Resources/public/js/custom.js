@@ -25,31 +25,6 @@ $(document).ready(function () {
             $('.top-bar').addClass('alt')
         }
     });
-    //
-    $('#mainnav .nav a').click(function (e) {
-        e.preventDefault();
-        var des = $(this).attr('href');
-        if ($('.navbar').hasClass(
-            'in')) {
-            $('.navbar .btn-navbar').trigger(
-                'click');
-        }
-        goToSectionID(des);
-    })
-
-    // Local Scroll //
-    $('#mainnav li').localScroll({
-        duration: 1000
-    });
-    $('.logo').localScroll({
-        duration: 1000
-    });
-
-    // One Page Nav //
-    $('.top-bar').onePageNav({
-        currentClass: 'current',
-        filter: ':not(.external)'
-    });
 
     // Calculate the viewport height //
     var viewHeight = $(window).height();
