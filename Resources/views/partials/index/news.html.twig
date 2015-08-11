@@ -23,7 +23,9 @@
         <br class="clearfix">
 
         <div class="news-entry">
-            <h3 class="entry-title">{{ post.title }}</h3>
+            <h3 class="entry-title">
+                <a href="{{ permalink }}#newsitem">{{ post.title }}</a>
+            </h3>
 
             {# <div class="entry-image"><img
                         src="…"
