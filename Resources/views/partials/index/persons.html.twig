@@ -40,7 +40,7 @@
                                             <div class="l-box">
                                                     <img class="profile-img" src="{{ person.avatar.file.thumbnails.person }}" alt=" {{ person.firstName }}">
                                                 <hr class="p-hr">
-                                                <h3 class="p-name">{{ person.firstName }} {{ person.lastName }}</h3>
+                                                <h3 class="p-name">{{ person.firstName }} {{ person.lastName|default("") }}</h3>
 
                                                 {% if person.company is defined %}
                                                     <h4 class="p-company">{{ person.company }}</h4>
@@ -49,11 +49,11 @@
                                                 {% if person.occupation is defined %}
                                                     <h5 class="p-position">{{ person.occupation }}</h5>
                                                 {% endif %}
-                                            </div>                                    
+                                            </div>
                                         </div>
                                         <div class="background">
                                             <div class="l-box">
-                                                <h2 class="p-description-title">{{ person.firstName }} {{ person.lastName }}</h2>
+                                                <h2 class="p-description-title">{{ person.firstName }} {{ person.lastName|default("") }}</h2>
                                                 <p class="p-description">
                                                     {% if person.shortBio is defined %}
                                                         {{ person.shortBio|markdown }}
