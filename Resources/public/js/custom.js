@@ -329,3 +329,10 @@ $(document).ready(function () {
     sortArrayByDate('events_day_2', 'event-section-2');
     sortArrayByDate('events_day_3', 'event-section-3');
 });
+
+$(document).ready(function () {
+    //'one' is not a typo
+    $("#map_cover").on( "click", function() {
+        $('#map_cover').remove();
+    });
+});
