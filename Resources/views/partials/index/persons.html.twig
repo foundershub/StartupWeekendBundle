@@ -66,7 +66,7 @@
                                                 <div class="p-social">
                                                     {% if person.urlFacebook is defined %}
                                                     <div class="p-social-tab p-social-facebook">
-                                                        <a href="#" class="icon-wrap small facebook" title="Facebook">
+                                                        <a href="{{ person.urlFacebook }}" class="icon-wrap small facebook" title="Facebook">
                                                             <i class="iconf-facebook"></i>
                                                         </a>
                                                     </div>
@@ -74,7 +74,7 @@
 
                                                     {% if person.urlTwitter is defined %}
                                                     <div class="p-social-tab p-social-twitter">
-                                                        <a href="#" class="icon-wrap small twitter" title="Twitter">
+                                                        <a href="{{ person.urlTwitter }}" class="icon-wrap small twitter" title="Twitter">
                                                             <i class="iconf-twitter"></i>
                                                         </a>
                                                     </div>
@@ -82,7 +82,7 @@
 
                                                     {% if person.urlGoogle is defined %}
                                                     <div class="p-social-tab p-social-google">
-                                                        <a href="#" class="icon-wrap small google" title="Google+">
+                                                        <a href="{{ person.urlGoogle }}" class="icon-wrap small google" title="Google+">
                                                             <i class="iconf-gplus"></i>
                                                         </a>
                                                     </div>
@@ -90,7 +90,7 @@
 
                                                     {% if person.urlLinkedIn is defined %}
                                                     <div class="p-social-tab p-social-linkedin">
-                                                        <a href="#" class="icon-wrap small linkedin" title="LinkedIn">
+                                                        <a href="{{ person.urlLinkedIn }}" class="icon-wrap small linkedin" title="LinkedIn">
                                                             <i class="iconf-linkedin"></i>
                                                         </a>
                                                     </div>
