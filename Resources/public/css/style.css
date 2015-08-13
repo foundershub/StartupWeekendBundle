@@ -1997,6 +1997,8 @@ a.instagram:hover {
     border-bottom: 1px solid #DDD;
 
     /*overflow: hidden;*/
+
+    min-height: 380px;
 }
 
 .profile-padding {
