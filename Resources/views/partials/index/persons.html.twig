@@ -54,13 +54,16 @@
                                         <div class="background">
                                             <div class="l-box">
                                                 <h2 class="p-description-title">{{ person.firstName }} {{ person.lastName|default("") }}</h2>
-                                                <p class="p-description">
-                                                    {% if person.shortBio is defined %}
+
+                                                {% if person.shortBio is defined %}
+                                                    <div class="p-description">
                                                         {{ person.shortBio|markdown }}
-                                                    {% else %}
+                                                    </div>
+                                                {% else %}
+                                                    <p>
                                                         Get to know more about this person at the event.
-                                                    {% endif %}
-                                                </p>
+                                                    </p>
+                                                {% endif %}
 
                                                 {% if (person.urlFacebook is defined or person.urlTwitter is defined or person.urlGoogle is defined or person.urlLinkedIn is defined) %}
                                                 <div class="p-social">
