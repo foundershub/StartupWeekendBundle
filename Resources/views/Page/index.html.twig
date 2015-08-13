@@ -8,7 +8,11 @@
 
 {% include "FoundershubStartupWeekendBundle:partials:index/register.html.twig" %}
 
-{% include "FoundershubStartupWeekendBundle:partials:index/judges.html.twig" %}
+{% include "FoundershubStartupWeekendBundle:partials:index/persons.html.twig" with {
+    'PersonType': 'Judge',
+    'Headline': 'Judges',
+    'Subline': 'This Is The Jury'
+}%}
 
 {% include "FoundershubStartupWeekendBundle:partials:index/venue.html.twig" %}
 
@@ -20,13 +24,21 @@
 
 {% include "FoundershubStartupWeekendBundle:partials:index/workshops.html.twig" %}
 
-{% include "FoundershubStartupWeekendBundle:partials:index/mentors.html.twig" %}
+{% include "FoundershubStartupWeekendBundle:partials:index/persons.html.twig" with {
+    'PersonType': 'Mentor',
+    'Headline': 'Mentors',
+    'Subline': 'Learn From These Great Folks'
+}%}
 
 {# {% include "FoundershubStartupWeekendBundle:partials:index/demo.html.twig" %} #}
 
 {% include "FoundershubStartupWeekendBundle:partials:index/sponsors.html.twig" %}
 
-{% include "FoundershubStartupWeekendBundle:partials:index/team.html.twig" %}
+{% include "FoundershubStartupWeekendBundle:partials:index/persons.html.twig" with {
+    'PersonType': 'Team',
+    'Headline': 'Team',
+    'Subline': 'Meet The Team'
+}%}
 
 {% include "FoundershubStartupWeekendBundle:partials:index/tickets.html.twig" %}
 

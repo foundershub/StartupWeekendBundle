@@ -468,7 +468,7 @@ nav select {
     margin: 0 auto;
     padding: 0;
 }
-#about, #register, #speakers, #judges, #schedule, #workshops, #venue, #sponsors, #news, #newsitem, #twitter-feed, #contact, #newsletter {
+#about, #register, #mentor, #jury, #schedule, #workshops, #venue, #sponsors, #news, #newsitem, #twitter-feed, #contact, #newsletter {
     padding: 100px 0 150px;
     -webkit-box-shadow: 0 5px 0 rgba(30, 38, 44, 0.2) inset;
     -moz-box-shadow: 0 5px 0 rgba(30, 38, 44, 0.2) inset;
@@ -487,7 +487,7 @@ nav select {
     overflow: hidden;
 }
 
-#judges, #speakers, #team {
+#jury, #mentor, #team {
     background: #eee !important;
 }
 

@@ -1,15 +1,26 @@
-{% if startupweekend_content('Mentor')|length > 0 %}
-    <section id="speakers" class="x-section white-bg">
+{#
+
+    For PersonType, provide a Capitalized String consisting of a word like "Mentor", "Judge" or "Team"
+
+    Available VARS: 
+        PersonType
+        Headline
+        Subline
+#}
+
+{# Pass a String for the Loop #}
+{% if startupweekend_content(PersonType)|length > 0 %}
+    <section id="{{ PersonType|lower }}" class="x-section white-bg">
         <div class="container">
             <div class="row">
                 <div class="span12">
-                    <div class="module-header speakers-header">
-                        <h4>Mentors</h4>
+                    <div class="module-header {{ PersonType|lower}}-header">
+                        <h4>{{ Headline }}</h4>
                     </div>
                 </div>
                 
                 <div class="span12 hero-unit text-center">
-                    <h2>Learn From These Great Folks</h2>
+                    <h2>{{ Subline }}</h2>
                 </div>
 
                 <div class="span12">
@@ -20,7 +31,7 @@
                 <div class="span12">
                     <div class="people-container">
                         <div class="row">                            
-                            {% for person in startupweekend_content('Mentor') %}
+                            {% for person in startupweekend_content(PersonType) %}
                             <!-- Profile START -->
                             <div class="span3">
                                 <div class="profile-padding">
