@@ -40,7 +40,7 @@
                                             <div class="l-box">
                                                     <img class="profile-img" src="{{ person.avatar.file.thumbnails.person }}" alt=" {{ person.firstName }}">
                                                 <hr class="p-hr">
-                                                <h3 class="p-name">{{ person.firstName + person.lastName }}</h3>
+                                                <h3 class="p-name">{{ person.firstName }} {{ person.lastName }}</h3>
 
                                                 {% if person.company is defined %}
                                                     <h4 class="p-company">{{ person.company }}</h4>
@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="background">
                                             <div class="l-box">
-                                                <h2 class="p-description-title">{{ person.firstName }}</h2>
+                                                <h2 class="p-description-title">{{ person.firstName }} {{ person.lastName }}</h2>
                                                 <p class="p-description">
                                                     {% if person.shortBio is defined %}
                                                         {{ person.shortBio }}
@@ -62,6 +62,7 @@
                                                     {% endif %}
                                                 </p>
 
+                                                {% if (person.urlFacebook is defined or person.urlTwitter is defined or person.urlGoogle is defined or person.urlLinkedIn is defined) %}
                                                 <div class="p-social">
                                                     {% if person.urlFacebook is defined %}
                                                     <div class="p-social-tab p-social-facebook">
@@ -95,7 +96,8 @@
                                                     </div>
                                                     {% endif %}
                                                 </div>
-
+                                                {% endif %}
+                                                
                                             </div>
                                         </div>
                                     </div>
