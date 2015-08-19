@@ -1,13 +1,13 @@
 startupweekend_index:
     pattern:  /
     defaults:
-        _controller: FrameworkBundle:Template:template
+        _controller: startupweekend.contentful.controller.page:pageAction
         template:    'FoundershubStartupWeekendBundle:Page:index.html.twig'
 
 startupweekend_blogpost:
     pattern:  /blog/{slug}
     defaults:
-        _controller: FrameworkBundle:Template:template
+        _controller: startupweekend.contentful.controller.page:pageAction
         template:    'FoundershubStartupWeekendBundle:Page:blog.html.twig'
 
 # Twitter stream

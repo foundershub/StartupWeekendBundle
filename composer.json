@@ -23,8 +23,9 @@
         "php": ">=5.3.9",
         "symfony/framework-bundle": "~2.3",
         "abraham/twitteroauth": "0.2.0.3",
+        "dothiv/dothiv-parsedown-bundle": ">=1.0.0",
         "dothiv/dothiv-valueobject-bundle": "1.x",
-        "dothiv/dothiv-contentful-bundle": "dev-master",
+        "dothiv/dothiv-contentful-bundle": ">=0.2.1",
         "twig/extensions": "1.0.*"
     },
     "require-dev": {
