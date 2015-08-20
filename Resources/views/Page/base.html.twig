@@ -52,13 +52,23 @@
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:site_name" content="{{ title }}">
-
-  {% image '@FoundershubStartupWeekendBundle/Resources/public/images/swffm.png' %}
-    <meta property="og:image" content="{{ app.request.uriForPath(asset_url) }}">
+{#   {% image '@FoundershubStartupWeekendBundle/Resources/public/images/logo.png' %}
+  <meta property="og:image" content="{{ app.request.uriForPath(asset_url) }}">
   {% endimage %}
+ #}
+
+  {% if startupweekend_content('og_images')|length > 0 %}
+    {% for img in startupweekend_content('og_images') %}
+  
+        {{ dump(img) }}
+
+{#         {% image img.image %}
+        <meta property="og:image" content="{{ app.request.uriForPath(asset_url) }}">
+        {% endimage %} #}
+    {% endfor %}
+  {% endif %}
 
   <meta property="og:type" content="website">
-  <!-- END Facebook open graph support -->
 </head>
 
 <body>
