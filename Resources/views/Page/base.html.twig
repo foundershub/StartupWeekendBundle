@@ -57,16 +57,14 @@
   {% endimage %}
  #}
 
-  {% if startupweekend_content('og_images')|length > 0 %}
+{#   {% if startupweekend_content('og_images')|length > 0 %}
     {% for img in startupweekend_content('og_images') %}
   
-        {{ dump(img) }}
-
-{#         {% image img.image %}
+        {% image img.image %}
         <meta property="og:image" content="{{ app.request.uriForPath(asset_url) }}">
-        {% endimage %} #}
+        {% endimage %}
     {% endfor %}
-  {% endif %}
+  {% endif %} #}
 
   <meta property="og:type" content="website">
 </head>
