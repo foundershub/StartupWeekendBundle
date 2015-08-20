@@ -52,19 +52,20 @@
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:site_name" content="{{ title }}">
-{#   {% image '@FoundershubStartupWeekendBundle/Resources/public/images/logo.png' %}
+
+  {% image '@FoundershubStartupWeekendBundle/Resources/public/images/swffm.jpg' %}
   <meta property="og:image" content="{{ app.request.uriForPath(asset_url) }}">
   {% endimage %}
- #}
 
-{#   {% if startupweekend_content('og_images')|length > 0 %}
+{#
+  {% if startupweekend_content('og_images')|length > 0 %}
     {% for img in startupweekend_content('og_images') %}
-  
         {% image img.image %}
         <meta property="og:image" content="{{ app.request.uriForPath(asset_url) }}">
         {% endimage %}
     {% endfor %}
-  {% endif %} #}
+  {% endif %}
+ #}
 
   <meta property="og:type" content="website">
 </head>
