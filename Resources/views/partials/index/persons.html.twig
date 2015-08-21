@@ -40,15 +40,21 @@
                                             <div class="l-box">
                                                     <img class="profile-img" src="{{ person.avatar.file.thumbnails.person }}" alt=" {{ person.firstName }}">
                                                 <hr class="p-hr">
-                                                <h3 class="p-name">{{ person.firstName }} {{ person.lastName|default("") }}</h3>
 
-                                                {% if person.company is defined %}
-                                                    <h4 class="p-company">{{ person.company }}</h4>
-                                                {% endif %}
+                                                <div class="p-fg">
+                                                    <div class="l-box">
+                                                        <h3 class="p-name">{{ person.firstName }} {{ person.lastName|default("") }}</h3>
 
-                                                {% if person.occupation is defined %}
-                                                    <h5 class="p-position">{{ person.occupation }}</h5>
-                                                {% endif %}
+                                                        {% if person.company is defined %}
+                                                            <h4 class="p-company">{{ person.company }}</h4>
+                                                        {% endif %}
+
+                                                        {% if person.occupation is defined %}
+                                                            <h5 class="p-position">{{ person.occupation }}</h5>
+                                                        {% endif %} 
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="background">

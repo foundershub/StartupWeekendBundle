@@ -2036,6 +2036,13 @@ a.instagram:hover {
     font-weight: lighter;
 }
 
+.p-fg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .p-description,
 .profile .p-company,
 .profile .p-position {
