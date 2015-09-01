@@ -53,6 +53,7 @@ a {
     -webkit-backface-visibility: hidden;
     outline: 0;
 }
+
 a:hover {
     color: #f07f79;
     text-decoration: none;
@@ -1066,6 +1067,7 @@ a.instagram:hover {
 }
 .entry-content {
     padding: 20px 15px;
+    word-wrap: break-word !important;
 }
 /* Sponsors Section */
 .spnsr-logo {
@@ -1105,7 +1107,9 @@ a.instagram:hover {
 /* News Section */
 .news-items {
     margin: 0;
+    word-wrap: break-word;
 }
+
 .news-item {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
