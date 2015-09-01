@@ -32,6 +32,7 @@
                     <div class="people-container">
                         <div class="row">                            
                             {% for person in startupweekend_content(PersonType) %}
+                                {% if person.firstName != 'Carsten' and person.lastName != 'Maybach' %}
                                 {# {% if person.deleted != "true" %} #}
                                     <!-- Profile START -->
                                     <div class="span3">
@@ -115,6 +116,7 @@
                                     </div>
                                     <!-- Profile END -->
                                 {# {% endif %} #}
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>
