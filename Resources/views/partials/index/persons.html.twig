@@ -32,93 +32,87 @@
                     <div class="people-container">
                         <div class="row">                            
                             {% for person in startupweekend_content(PersonType) %}
-                                {% if person.occupation is defined %}
-                                    {% if person.firstName != 'Carsten' and person.lastName != '' %}
-                                    {# {% if person.deleted != "true" %} #}
-                                        <!-- Profile START -->
-                                        <div class="span3">
-                                            <div class="profile-padding">
-                                                <div class="profile">
-                                                    <div class="foreground">
+                                <!-- Profile START -->
+                                <div class="span3">
+                                    <div class="profile-padding">
+                                        <div class="profile">
+                                            <div class="foreground">
+                                                <div class="l-box">
+                                                        <img class="profile-img" src="{{ person.avatar.file.thumbnails.person }}" alt=" {{ person.firstName }}">
+                                                    <hr class="p-hr">
+
+                                                    <div class="p-fg">
                                                         <div class="l-box">
-                                                                <img class="profile-img" src="{{ person.avatar.file.thumbnails.person }}" alt=" {{ person.firstName }}">
-                                                            <hr class="p-hr">
+                                                            <h3 class="p-name">{{ person.firstName }} {{ person.lastName|default("") }}</h3>
 
-                                                            <div class="p-fg">
-                                                                <div class="l-box">
-                                                                    <h3 class="p-name">{{ person.firstName }} {{ person.lastName|default("") }}</h3>
-
-                                                                    {% if person.company is defined %}
-                                                                        <h4 class="p-company">{{ person.company }}</h4>
-                                                                    {% endif %}
-
-                                                                    {% if person.occupation is defined %}
-                                                                        <h5 class="p-position">{{ person.occupation }}</h5>
-                                                                    {% endif %} 
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="background">
-                                                        <div class="l-box">
-                                                            <h2 class="p-description-title">{{ person.firstName }} {{ person.lastName|default("") }}</h2>
-
-                                                            {% if person.shortBio is defined %}
-                                                                <div class="p-description">
-                                                                    {{ person.shortBio|markdown }}
-                                                                </div>
-                                                            {% else %}
-                                                                <p>
-                                                                    Get to know more about this person at the event.
-                                                                </p>
+                                                            {% if person.company is defined %}
+                                                                <h4 class="p-company">{{ person.company }}</h4>
                                                             {% endif %}
 
-                                                            {% if (person.urlFacebook is defined or person.urlTwitter is defined or person.urlGoogle is defined or person.urlLinkedIn is defined) %}
-                                                            <div class="p-social">
-                                                                {% if person.urlFacebook is defined %}
-                                                                <div class="p-social-tab p-social-facebook">
-                                                                    <a href="{{ person.urlFacebook }}" class="icon-wrap small facebook" title="Facebook">
-                                                                        <i class="iconf-facebook"></i>
-                                                                    </a>
-                                                                </div>
-                                                                {% endif %}
-
-                                                                {% if person.urlTwitter is defined %}
-                                                                <div class="p-social-tab p-social-twitter">
-                                                                    <a href="{{ person.urlTwitter }}" class="icon-wrap small twitter" title="Twitter">
-                                                                        <i class="iconf-twitter"></i>
-                                                                    </a>
-                                                                </div>
-                                                                {% endif %}
-
-                                                                {% if person.urlGoogle is defined %}
-                                                                <div class="p-social-tab p-social-google">
-                                                                    <a href="{{ person.urlGoogle }}" class="icon-wrap small google" title="Google+">
-                                                                        <i class="iconf-gplus"></i>
-                                                                    </a>
-                                                                </div>
-                                                                {% endif %}
-
-                                                                {% if person.urlLinkedIn is defined %}
-                                                                <div class="p-social-tab p-social-linkedin">
-                                                                    <a href="{{ person.urlLinkedIn }}" class="icon-wrap small linkedin" title="LinkedIn">
-                                                                        <i class="iconf-linkedin"></i>
-                                                                    </a>
-                                                                </div>
-                                                                {% endif %}
-                                                            </div>
+                                                            {% if person.occupation is defined %}
+                                                                <h5 class="p-position">{{ person.occupation }}</h5>
                                                             {% endif %}
-                                                            
                                                         </div>
                                                     </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="background">
+                                                <div class="l-box">
+                                                    <h2 class="p-description-title">{{ person.firstName }} {{ person.lastName|default("") }}</h2>
+
+                                                    {% if person.shortBio is defined %}
+                                                        <div class="p-description">
+                                                            {{ person.shortBio|markdown }}
+                                                        </div>
+                                                    {% else %}
+                                                        <p>
+                                                            Get to know more about this person at the event.
+                                                        </p>
+                                                    {% endif %}
+
+                                                    {% if (person.urlFacebook is defined or person.urlTwitter is defined or person.urlGoogle is defined or person.urlLinkedIn is defined) %}
+                                                    <div class="p-social">
+                                                        {% if person.urlFacebook is defined %}
+                                                        <div class="p-social-tab p-social-facebook">
+                                                            <a href="{{ person.urlFacebook }}" class="icon-wrap small facebook" title="Facebook">
+                                                                <i class="iconf-facebook"></i>
+                                                            </a>
+                                                        </div>
+                                                        {% endif %}
+
+                                                        {% if person.urlTwitter is defined %}
+                                                        <div class="p-social-tab p-social-twitter">
+                                                            <a href="{{ person.urlTwitter }}" class="icon-wrap small twitter" title="Twitter">
+                                                                <i class="iconf-twitter"></i>
+                                                            </a>
+                                                        </div>
+                                                        {% endif %}
+
+                                                        {% if person.urlGoogle is defined %}
+                                                        <div class="p-social-tab p-social-google">
+                                                            <a href="{{ person.urlGoogle }}" class="icon-wrap small google" title="Google+">
+                                                                <i class="iconf-gplus"></i>
+                                                            </a>
+                                                        </div>
+                                                        {% endif %}
+
+                                                        {% if person.urlLinkedIn is defined %}
+                                                        <div class="p-social-tab p-social-linkedin">
+                                                            <a href="{{ person.urlLinkedIn }}" class="icon-wrap small linkedin" title="LinkedIn">
+                                                                <i class="iconf-linkedin"></i>
+                                                            </a>
+                                                        </div>
+                                                        {% endif %}
+                                                    </div>
+                                                    {% endif %}
+
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Profile END -->
-                                    {# {% endif %} #}
-                                    {% endif %}
-                                {% endif %}
+                                    </div>
+                                </div>
+                                <!-- Profile END -->
                             {% endfor %}
                         </div>
                     </div>
