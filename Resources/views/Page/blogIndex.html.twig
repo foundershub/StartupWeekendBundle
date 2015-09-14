@@ -1,0 +1,205 @@
+{% extends "FoundershubStartupWeekendBundle:Page:base.html.twig" %}
+
+{% block stylesheets %}
+    {% stylesheets 'foundershubstartupweekend/web/css/blogIndex.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+    {% include "FoundershubStartupWeekendBundle:partials:index/intro.html.twig" %}
+
+    <section id="blog-intro">
+      <div class="container">
+        <div class="flexslider">
+          <ul class="slides">
+            <li>
+              <div class="row jumbotron">
+                <div class="span12 text-center">
+                  <h2>SWRM Blog</h2>
+                  <h3>{{ short_description }}</h3>
+                  <h4 class="info">
+                      <span class="days">{{ event_start|date('d') }}&ndash;{{ event_end|date('d') }}</span>
+                      <span class="month"><b>{{ event_start|date('M') }}</b></span><span class="year">{{ event_start|date('Y') }}</span>
+                      <span class="location">Frankfurt</span>
+                  </h4>
+                  <a href="/#tickets" class="btn">Get tickets</a> </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    {% for post in startupweekend_content('Blog Post') %}
+    {% if post.slug == app.request.attributes.get('slug') %}
+        {% set pubDate = post.cfMeta.updatedAt %}
+        {% set permalink = url('startupweekend_blogpost', {'slug': post.slug}) %}
+        <section id="newsitem">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="module-header news-header">
+                            <h4>{{ post.title }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset2 span8">
+                            <div class="news-date"><span class="month">{{ pubDate|date('M') }}</span> <span
+                                        class="day">{{ pubDate|date('d') }}</span></div>
+                            <div class="share-widget">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ permalink|url_encode }}"><i class="iconf-facebook"></i></a>
+                                <a href="https://twitter.com/home?status={{ post.title|url_encode }}:%20{{ permalink|url_encode }}%20%23swrm15"><i class="iconf-twitter"></i></a>
+                            </div>
+                            <br class="clearfix">
+                        {% if post.introduction is defined %}{{ post.introduction|markdown }}{% endif %}
+                        {{ post.text|markdown }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endif %}
+    {% endfor %}
+
+        <section style="background-color: #eee">
+            <div class="l-box">
+            {# {% if startupweekend_content('Blog Post')|length > 0 %} #}
+                {% for post in startupweekend_content('Blog Post') %}
+
+                        <div class="blog-post" id="{{ post.slug }}">
+                            <div class="lb-box">
+                                <div class="blog-post-title-container">
+                                    <h2 class="bpt-content"><a href="{{ url('startupweekend_blogpost', {'slug': post.slug }) }}">{{ post.title }}</a></h2>
+                                    <h2 class="bpt-anchor"><a href="{{ url('startupweekend_blog_index') }}#{{ post.slug }}" style="float: right">⚓</a></h2>
+                                    <div class="bpt-info">
+                                        Posted on {{ post.cfMeta.updatedAt|date('d. F Y')}}
+                                    </div>
+                                </div>
+
+                                <div class="blog-post-content">
+                                    <div class="blog-post-introduction">
+                                        {% if post.introduction is defined %}
+                                            {{ post.introduction|markdown }}
+                                        {% endif %}
+                                        {% if post.text is defined %}
+                                            {{ post.text|markdown }}
+                                        {% endif %} 
+                                    </div>
+                                </div>
+                                <hr />
+                                    {# {{ dump(post) }} #}
+
+                                <div class="blog-post-actions">
+                                    <span>Share on:</span> 
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('startupweekend_blogpost', {'slug': post.slug})|url_encode }}"><i class="iconf-facebook"></i></a>
+                                    <a href="https://twitter.com/home?status={{ post.title|url_encode }}:%20{{ url('startupweekend_blogpost', {'slug': post.slug})|url_encode }}%20%23swrm15"><i class="iconf-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                {% endfor %}
+            {# {% endif %} #}
+            </div>
+        </section>
+
+<script>
+
+</script>
+
+<style>
+
+.lb-box {
+    padding: 2em;
+}
+
+.blog-post {
+    max-width: 960px;
+    margin: 0 auto;
+
+    background: #fff;
+    margin-bottom: 4em;
+
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.blog-post hr {
+    color: #e72c00;
+    border-color: #e72c00;
+}
+
+.blog-post h2 {
+    color: #e72c00;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.blog-post-introduction {
+    margin-bottom: 2em;
+}
+
+.blog-post-introduction img {
+    max-height: 30vh;
+}
+
+.blog-post-title-container {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.blog-post-title-container h2 {
+    display: inline-block;
+}
+
+.blog-post-title-container .bpt-anchor {
+    display: none;
+}
+
+.blog-post-title-container:hover .bpt-anchor {
+    display: inline-block;
+    float: right;
+}
+
+.bpt-anchor a {
+    color: #bbb;
+}
+
+.bpt-anchor a:hover {
+    color: #999;
+}
+
+.bpt-content {
+    max-width: 90%;
+}
+
+.bpt-info {
+    color: #777;
+}
+
+#intro {
+    display: none;
+}
+
+#blog-intro {
+    background:url(../images/backgrounds/intro.jpg) center center no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-color: #777;
+
+    color: white;
+    min-height: 300px;
+    height: 660px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+</style>
+
+{% endblock %}

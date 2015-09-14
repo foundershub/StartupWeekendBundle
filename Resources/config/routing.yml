@@ -4,6 +4,12 @@ startupweekend_index:
         _controller: startupweekend.contentful.controller.page:pageAction
         template:    'FoundershubStartupWeekendBundle:Page:index.html.twig'
 
+startupweekend_blog_index:
+    pattern: /blog/
+    defaults:
+        _controller: startupweekend.contentful.controller.page:pageAction
+        template:    'FoundershubStartupWeekendBundle:Page:blogIndex.html.twig'
+
 startupweekend_blogpost:
     pattern:  /blog/{slug}
     defaults:
