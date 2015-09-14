@@ -9,6 +9,39 @@
 {% block content %}
     {% include "FoundershubStartupWeekendBundle:partials:index/intro.html.twig" %}
 
+
+{#     {% for post in startupweekend_content('Blog Post') %}
+        {% if post.slug == app.request.attributes.get('slug') %}
+            {% set pubDate = post.cfMeta.updatedAt %}
+            {% set permalink = url('startupweekend_blogpost', {'slug': post.slug}) %}
+            <section id="newsitem">
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <div class="module-header news-header">
+                                <h4>{{ post.title }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="offset2 span8">
+                                <div class="news-date"><span class="month">{{ pubDate|date('M') }}</span> <span
+                                            class="day">{{ pubDate|date('d') }}</span></div>
+                                <div class="share-widget">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ permalink|url_encode }}"><i class="iconf-facebook"></i></a>
+                                    <a href="https://twitter.com/home?status={{ post.title|url_encode }}:%20{{ permalink|url_encode }}%20%23swrm15"><i class="iconf-twitter"></i></a>
+                                </div>
+                                <br class="clearfix">
+                            {% if post.introduction is defined %}{{ post.introduction|markdown }}{% endif %}
+                            {{ post.text|markdown }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        {% endif %}
+    {% endfor %} #}
+
     <section id="blog-intro">
       <div class="container">
         <div class="flexslider">
@@ -31,79 +64,79 @@
       </div>
     </section>
 
+    <section id="blogposts-section" style="background-color: #eee">
+        <div class="container">
+            <div class="row">
 
-    {% for post in startupweekend_content('Blog Post') %}
-    {% if post.slug == app.request.attributes.get('slug') %}
-        {% set pubDate = post.cfMeta.updatedAt %}
-        {% set permalink = url('startupweekend_blogpost', {'slug': post.slug}) %}
-        <section id="newsitem">
-            <div class="container">
-                <div class="row">
-                    <div class="span12">
-                        <div class="module-header news-header">
-                            <h4>{{ post.title }}</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="offset2 span8">
-                            <div class="news-date"><span class="month">{{ pubDate|date('M') }}</span> <span
-                                        class="day">{{ pubDate|date('d') }}</span></div>
-                            <div class="share-widget">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ permalink|url_encode }}"><i class="iconf-facebook"></i></a>
-                                <a href="https://twitter.com/home?status={{ post.title|url_encode }}:%20{{ permalink|url_encode }}%20%23swrm15"><i class="iconf-twitter"></i></a>
-                            </div>
-                            <br class="clearfix">
-                        {% if post.introduction is defined %}{{ post.introduction|markdown }}{% endif %}
-                        {{ post.text|markdown }}
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="span8">
+                    <div class="l-box">
+                    {# {% if startupweekend_content('Blog Post')|length > 0 %} #}
+                        {% for post in startupweekend_content('Blog Post')|reverse %}
 
-    {% endif %}
-    {% endfor %}
+                                <div class="blog-post" id="{{ post.slug }}">
+                                    <div class="lb-box">
+                                        <div class="blog-post-title-container">
+                                            <h2 class="bpt-content"><a href="{{ url('startupweekend_blogpost', {'slug': post.slug }) }}">{{ post.title }}</a></h2>
+                                            <h2 class="bpt-anchor"><a href="{{ url('startupweekend_blog_index') }}#{{ post.slug }}" style="float: right">⚓</a></h2>
+                                            <div class="bpt-info">
+                                                Posted on {{ post.cfMeta.updatedAt|date('d. F Y')}}
+                                            </div>
+                                        </div>
 
-        <section style="background-color: #eee">
-            <div class="l-box">
-            {# {% if startupweekend_content('Blog Post')|length > 0 %} #}
-                {% for post in startupweekend_content('Blog Post') %}
+                                        <div class="blog-post-content">
+                                            <div class="blog-post-introduction">
+                                                {% if post.introduction is defined %}
+                                                    {{ post.introduction|markdown }}
+                                                {% endif %}
+                                                {% if post.text is defined %}
+                                                    {{ post.text|markdown }}
+                                                {% endif %} 
+                                            </div>
+                                        </div>
+                                        <hr />
+                                            {# {{ dump(post) }} #}
 
-                        <div class="blog-post" id="{{ post.slug }}">
-                            <div class="lb-box">
-                                <div class="blog-post-title-container">
-                                    <h2 class="bpt-content"><a href="{{ url('startupweekend_blogpost', {'slug': post.slug }) }}">{{ post.title }}</a></h2>
-                                    <h2 class="bpt-anchor"><a href="{{ url('startupweekend_blog_index') }}#{{ post.slug }}" style="float: right">⚓</a></h2>
-                                    <div class="bpt-info">
-                                        Posted on {{ post.cfMeta.updatedAt|date('d. F Y')}}
+                                        <div class="blog-post-actions">
+                                            <span>Share on:</span> 
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('startupweekend_blogpost', {'slug': post.slug})|url_encode }}"><i class="iconf-facebook"></i></a>
+                                            <a href="https://twitter.com/home?status={{ post.title|url_encode }}:%20{{ url('startupweekend_blogpost', {'slug': post.slug})|url_encode }}%20%23swrm15"><i class="iconf-twitter"></i></a>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="blog-post-content">
-                                    <div class="blog-post-introduction">
-                                        {% if post.introduction is defined %}
-                                            {{ post.introduction|markdown }}
+                        {% endfor %}
+                    {# {% endif %} #}
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <aside id="bookmarks">
+                        <div class="l-box">
+                            <h2>Articles</h2>
+                            <ul>
+                                {% for post in startupweekend_content('Blog Post')|reverse %}
+                                    {% set thisDate = post.cfMeta.createdAt|date('F Y') %}
+                                    {% if lastDate is defined %}
+                                        {% if thisDate != lastDate %}
+                                            <hr />
+                                            {{ thisDate }}
                                         {% endif %}
-                                        {% if post.text is defined %}
-                                            {{ post.text|markdown }}
-                                        {% endif %} 
-                                    </div>
-                                </div>
-                                <hr />
-                                    {# {{ dump(post) }} #}
+                                    {% else %}
+                                        {{ thisDate }}
+                                    {% endif %}
 
-                                <div class="blog-post-actions">
-                                    <span>Share on:</span> 
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('startupweekend_blogpost', {'slug': post.slug})|url_encode }}"><i class="iconf-facebook"></i></a>
-                                    <a href="https://twitter.com/home?status={{ post.title|url_encode }}:%20{{ url('startupweekend_blogpost', {'slug': post.slug})|url_encode }}%20%23swrm15"><i class="iconf-twitter"></i></a>
-                                </div>
-                            </div>
+                                    <li>- <a href="{{ url('startupweekend_blog_index') }}#{{ post.slug }}">{{ post.title }}</a></li>
+
+                                    {% set lastDate = post.cfMeta.createdAt|date('F Y') %}
+                                {% endfor %}
+                            </ul>
                         </div>
+                    </aside>
+                </div>
 
-                {% endfor %}
-            {# {% endif %} #}
-            </div>
-        </section>
+            </div> <!-- END ROW -->
+        </div> <!-- END CONTAINER -->
+    </section>
 
 <script>
 
@@ -115,10 +148,28 @@
     padding: 2em;
 }
 
-.blog-post {
-    max-width: 960px;
-    margin: 0 auto;
+/* ASIDE */
 
+#bookmarks h1, h2, h3 {
+    color: #e72c00
+}
+
+#bookmarks ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+#bookmarks ul li {
+    margin-bottom: 1em;
+}
+
+#bookmarks hr {
+    border-color: #999;
+}
+
+/* BLOG POST */
+
+.blog-post {
     background: #fff;
     margin-bottom: 4em;
 
@@ -200,6 +251,11 @@
     padding: 0;
 }
 
-</style>
+#blog-intro h1,
+#blog-intro h2,
+#blog-intro h3 {
+    color: #fff;
+}
 
+</style>
 {% endblock %}
