@@ -71,8 +71,7 @@
                 <div class="span8">
                     <div class="l-box">
                     {# {% if startupweekend_content('Blog Post')|length > 0 %} #}
-                        {% for post in startupweekend_content('Blog Post')|reverse %}
-
+                        {% for post in startupweekend_content('Blog Post')|multisort('cfMeta.createdAt', true) %}
                                 <div class="blog-post" id="{{ post.slug }}">
                                     <div class="lb-box">
                                         <div class="blog-post-title-container">
@@ -114,15 +113,15 @@
                         <div class="l-box">
                             <h2>Articles</h2>
                             <ul>
-                                {% for post in startupweekend_content('Blog Post')|reverse %}
+                                {% for post in startupweekend_content('Blog Post')|multisort('cfMeta.createdAt', true) %}
                                     {% set thisDate = post.cfMeta.createdAt|date('F Y') %}
                                     {% if lastDate is defined %}
                                         {% if thisDate != lastDate %}
                                             <hr />
-                                            {{ thisDate }}
+                                            <h4>{{ thisDate }}</h4>
                                         {% endif %}
                                     {% else %}
-                                        {{ thisDate }}
+                                        <h4>{{ thisDate }}</h4>
                                     {% endif %}
 
                                     <li>- <a href="{{ url('startupweekend_blog_index') }}#{{ post.slug }}">{{ post.title }}</a></li>
@@ -137,6 +136,12 @@
             </div> <!-- END ROW -->
         </div> <!-- END CONTAINER -->
     </section>
+
+    {% include "FoundershubStartupWeekendBundle:partials:index/contact.html.twig" %}
+
+    {% include "FoundershubStartupWeekendBundle:partials:index/twitter_feed.html.twig" %}
+
+    {% include "FoundershubStartupWeekendBundle:partials:index/footer.html.twig" %}
 
 <script>
 
@@ -165,6 +170,16 @@
 
 #bookmarks hr {
     border-color: #999;
+}
+
+#bookmarks h1,
+#bookmarks h2 {
+
+}
+
+#bookmarks h3,
+#bookmarks h4 {
+    color: #555;
 }
 
 /* BLOG POST */
