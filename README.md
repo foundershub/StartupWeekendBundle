@@ -1,7 +1,7 @@
 StartupWeekendBundle
 =================
 
-This is a Symfony2 bundle containing the FoundersHub RheinMain StartupWeekend Welcome to FinTechCity public website
+This is a Symfony2 bundle containing the StartupWeekend Welcome to FinTechCity public website
 
 [![Travis CI](https://travis-ci.org/foundershub/StartupWeekendBundle.svg?branch=master)](https://travis-ci.org/foundershub/StartupWeekendBundle)
 
